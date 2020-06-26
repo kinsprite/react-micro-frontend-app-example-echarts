@@ -1,0 +1,45 @@
+/* eslint-disable */
+"use strict";
+
+(function(callback) {
+  var data = {
+    apps: [
+      {
+        id: '3rd-echarts',
+        dependencies: [],
+        entries: [
+          "https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.simple.min.js",
+        ],
+        renders: [],
+      },
+      {
+        id: 'app-example',
+        dependencies: [],
+        entries: [
+          // REMOVE the current app's entries in development
+          // '/rmf-app-example/658c5f91/app-example-a200b003.css',
+          // '/rmf-app-example/658c5f91/app-example-b889c22.js'
+        ],
+        renders: [{renderId: 'root', routePath: '/app-example', componentKey: 'default'}],
+      },
+      {
+        id: 'app-example-echarts',
+        dependencies: ['3rd-echarts'],
+        entries: [
+          // REMOVE the current app's entries in development
+          // '/rmf-app-example-echarts/658c5f91/app-example-echarts-a200b003.css',
+          // '/rmf-app-example-echarts/658c5f91/app-example-echarts-b889c22.js'
+        ],
+        renders: [
+          {renderId: 'app-example-sub', routePath: '/app-example/echarts', componentKey: 'default'},
+          // {renderId: 'root', routePath: '/echarts-at-root', componentKey: 'default'}
+        ],
+      },
+    ],
+    extra: {
+      defaultRoute: '/app-example/echarts',
+    }
+  };
+
+  if (callback) callback(data);
+})(rmfMetadataCallback);
