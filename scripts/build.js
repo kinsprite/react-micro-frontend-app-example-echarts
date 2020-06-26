@@ -16,7 +16,15 @@ function build() {
 
   scripts.runWebpack(scripts.envProduction, (config) => ({
     ...config,
-    externals: scripts.helper.getExternalsOptions(),
+    externals: {
+      ...scripts.helper.getExternalsOptions(),
+      echarts: {
+        commonjs: 'echarts',
+        commonjs2: 'echarts',
+        amd: 'echarts',
+        root: 'echarts',
+      },
+    },
   }));
 }
 

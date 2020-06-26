@@ -8,7 +8,8 @@
         id: '3rd-echarts',
         dependencies: [],
         entries: [
-          "https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.simple.min.js",
+          // We use npm's echarts in development
+          // "https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.simple.min.js",
         ],
         renders: [],
       },
