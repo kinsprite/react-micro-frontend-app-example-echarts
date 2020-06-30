@@ -1,33 +1,33 @@
-import React, { useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as echarts from 'echarts';
 
 import styles from './ExampleEcharts.module.css';
+import EChartComponent from './EChartComponent';
 
 function ExampleEcharts() : JSX.Element {
-  const echartRef = useCallback((node) => {
-    if (node !== null) {
-      const myChart = echarts.init(node);
-      // 绘制图表
-      myChart.setOption({
-        title: {
-          text: 'ECharts introductory example',
-        },
-        tooltip: {},
-        xAxis: {
-          data: ['shirt', 'cardign', 'chiffon shirt', 'pants', 'heels', 'socks'],
-        },
-        yAxis: {},
-        series: [{
-          name: 'sales',
-          type: 'bar',
-          data: [5, 20, 36, 10, 10, 20],
-        }],
-      });
-    }
-  }, []);
+  const [once] = useState(1);
+  const [option, setOption] = useState(null as echarts.EChartOption);
+
+  useEffect(() => {
+    setOption({
+      title: {
+        text: 'ECharts introductory example',
+      },
+      tooltip: {},
+      xAxis: {
+        data: ['shirt', 'cardign', 'chiffon shirt', 'pants', 'heels', 'socks'],
+      },
+      yAxis: {},
+      series: [{
+        name: 'sales',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20],
+      }],
+    });
+  }, [once]);
 
   return (
-    <div className={styles.container} ref={echartRef} />
+    <EChartComponent className={styles.container} option={option} />
   );
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "react-micro-frontend-app-example-echarts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React micro frontend app-example-echarts",
   "main": "index.js",
   "module": "src/index.ts",
@@ -21,7 +21,8 @@
         "routePath": "/app-example/echarts",
         "componentKey": "default"
       }
-    ]
+    ],
+    "extra": {}
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -41,6 +42,7 @@
     ]
   },
   "peerDependencies": {
+    "@types/echarts": "^4.6.3",
     "@types/jest": "^26.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.38",
@@ -51,7 +53,7 @@
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
-    "react-micro-frontend-framework": "^2.1.0",
+    "react-micro-frontend-framework": "^2.3.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
@@ -62,6 +64,7 @@
     "sanitize.css": "^11.0.1"
   },
   "devDependencies": {
+    "@types/echarts": "^4.6.3",
     "@types/jest": "^26.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.38",
@@ -73,8 +76,8 @@
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-micro-frontend-app-example": "^1.1.0",
-    "react-micro-frontend-framework": "^2.1.0",
-    "react-micro-frontend-scripts": "^2.2.0",
+    "react-micro-frontend-framework": "^2.3.0",
+    "react-micro-frontend-scripts": "^2.4.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
