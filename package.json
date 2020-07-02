@@ -1,6 +1,6 @@
 {
   "name": "react-micro-frontend-app-example-echarts",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "React micro frontend app-example-echarts",
   "main": "index.js",
   "module": "src/index.ts",
